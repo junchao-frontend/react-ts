@@ -1,8 +1,15 @@
 import { Button } from 'antd'
+import { getUser } from '@/api/user'
 const Layout = () => {
+  const test = async () => {
+    const res = await getUser()
+    console.log(res)
+  }
   return (
     <>
-      <Button type="primary">Button</Button>
+      <Button type="primary" onClick={test}>
+        Button
+      </Button>
     </>
   )
 }
