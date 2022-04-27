@@ -44,6 +44,10 @@ class HttpRequest {
         return res.data // 返回数据
       },
       (error) => {
+        if (error.response.status === 401) {
+          window.location.href = '/login'
+        }
+
         // 这里是遇到报错的回调
         return Promise.reject(error)
       }
